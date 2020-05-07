@@ -1,0 +1,115 @@
+body {
+    background-color: #0a356d;
+    color: #fff;
+    font-family: 'Bitter', serif;
+    font-weight: 300;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    border: 1px solid;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0px 3px 10px 1px #fff;
+    margin: 0 .5rem;
+}
+
+.container h1 {
+    margin: 0 0 2rem 0;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+
+/* Password and Clipboard */
+.password-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.generated-password {
+    height: 2rem;
+    width: 90%;
+    font-size: 1rem;
+    font-weight: bold;
+    word-break: break-all;
+    padding-left: .5rem;
+    border: 1px transparent;
+    border-radius: .5rem;
+    background-color: #ffffff;
+    outline: none;
+}
+
+.generated-password:placeholder-shown {
+    font-weight: 300;
+    color: #fff;
+}
+
+.clipboard {
+    cursor: pointer;
+    color: #b3c1ff;
+    margin-left: 1rem;
+    font-size: 2rem;
+    transition: ease-in-out .2s;
+}
+
+.clipboard:hover {
+    transform: scale(1.15);
+}
+
+.slider {
+    cursor: pointer;
+}
+
+/* Generating Options */
+.options {
+    display: flex;
+    flex-direction: column;
+}
+
+.option {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: .7rem;
+}
+
+.option input {
+    transform: scale(1.25);
+}
+
+/* Button Generate */
+.generate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.generate button {
+    background-color: rgb(0, 153, 241);
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    width: 80%;
+    font-weight: bold;
+    color: #fff;
+    padding: .6rem;
+    border: 1px transparent;
+    border-radius: .5rem;
+    outline: none;
+    cursor: pointer;
+    transition: ease-in-out .2s;
+}
+
+.generate button:hover {
+    transform: scale(1.02);
+    background-color: rgb(43, 2, 224);
+    box-shadow: 0px 3px 10px 1px #fff;
+}
