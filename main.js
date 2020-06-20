@@ -49,27 +49,37 @@ function generatePassword() {
 
   const numofCheckedOptions = numOfChecked();
   const selected = selectedOptions();
+  var randLen = Math.floor(Math.random() * (slider.value - numofCheckedOptions)) + 1;
 
+  while (password.length < slider.value) {
   if (numofCheckedOptions === 0) {
     alert("Select at least one option!");
     return "";
-  }
-
-  for (let i = 0; i < slider.value; i += numofCheckedOptions) {
+  } else if (numofCheckedOptions >= 1) {
     selected.forEach((option) => {
       if ("upper" in option) {
-        password += getUpperChar();
+        for (i = 0; i < numofCheckedOptions; i++) {
+          password += getUpperChar();
+        }
       } else if ("lower" in option) {
-        password += getLowerChar();
+        for (i = 0; i < numofCheckedOptions; i++) {
+          password += getLowerChar();
+        }
       } else if ("numbers" in option) {
-        password += getNumber();
+        for (i = 0; i < numofCheckedOptions; i++) {
+          password += getNumber();
+        }
       } else {
-        password += getSymbol();
+        for (i = 0; i < numofCheckedOptions; i++) {
+          password += getSymbol();
+        }
       }
-    });
+    })
   }
-  var sliced = password.slice(0, slider.value);
-  var arrayPassword = Array.from(sliced);
+}
+  
+  //var sliced = password.slice(0, slider.value);
+  var arrayPassword = Array.from(password);
   return arrayPassword;
 }
 
@@ -84,7 +94,8 @@ function shuffle(passwordArray) {
     pwArray[i] = pwArray[randPos];
     pwArray[randPos] = temp;
   }
-  var finalArray = pwArray.toString().replace(/,/g, "");
+  console.log(pwArray);
+  var finalArray = pwArray.toString().replace(/,/g, "").slice(0, slider.value);
   return finalArray;
 }
 
