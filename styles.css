@@ -24,6 +24,10 @@ body {
     font-size: 2.5rem;
 }
 
+#password-alert {
+    text-align: center;
+    font-weight: bold;
+}
 
 /* Password and Clipboard */
 .password-container {

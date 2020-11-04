@@ -8,7 +8,16 @@ const lowerElement = document.getElementById("LowercaseChars");
 const numbersElement = document.getElementById("Numbers");
 const symbolsElement = document.getElementById("Symbols");
 const generateBtn = document.getElementById("btnGenerate");
+const passwordAlert = document.getElementById("password-alert");
 var password = "";
+var timer;
+
+// Alert options
+const alertOptions = {
+  leastOneOption: "Select at least one option...",
+  noPwtoCopy: "There is no password to copy...",
+  successCopy: "Password successfully copied!",
+}
 
 // Ranges for characters
 const upperRanges = [
@@ -155,23 +164,39 @@ function shuffle() {
   }
     var finalPw = array.toString().replace(/,/g, "").slice(0, slider.value);
     password = finalPw;
-  }
+}
+
+// Alert message disappear
+function removeMessage() {
+  passwordAlert.innerHTML = "&nbsp;";
+}
+
+var startTimer = function() {
+  clearTimeout(timer);
+  timer = setTimeout(removeMessage, 6000);
+}
 
 // Listener for clipboard
 clipboardElement.addEventListener("click", () => {
   if (passwordResult.value == "") {
-    alert("There is no password to copy!");
+    passwordAlert.style.color = "#ff414d";
+    passwordAlert.innerText = alertOptions["noPwtoCopy"];
+    startTimer();
   } else {
     passwordResult.select();
     document.execCommand("copy");
-    alert("Password successfully copied!");
+    passwordAlert.style.color = "#32e0c4";
+    passwordAlert.innerText = alertOptions["successCopy"];
+    startTimer();
   }
 });
 
 // Listener for password generate button
 generateBtn.addEventListener("click", () => {
     if (getNumberOfSelectedOptions() == 0) {
-      alert("Select at least one option!");
+      passwordAlert.style.color = "#ff414d";
+      passwordAlert.innerText = alertOptions["leastOneOption"];
+      startTimer();
     } else {
       generate();
       shuffle();
