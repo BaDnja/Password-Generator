@@ -1,61 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/3f9a850764.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <title>Password Generator</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <h1>Password Generator</h1>
-        
+      <h1>Password Generator</h1>
 
-        <p id="password-alert">&nbsp;</p>
-        <div class="password-container">
-        <input id="passwordResult" class="generated-password" type="text" placeholder="Password will appear here">
+      <p id="password-alert">&nbsp;</p>
+      <div class="password-container">
+        <input
+          id="passwordResult"
+          class="generated-password"
+          type="text"
+          placeholder="Password will appear here"
+        />
         <i id="clipboardElement" class="fas fa-clipboard-list clipboard"></i>
+      </div>
+
+      <div class="options">
+        <div class="option">
+          <label for="sliderRange">Length: <span id="rangeValue"></span></label>
+          <input
+            type="range"
+            min="5"
+            max="128"
+            value="8"
+            class="slider"
+            id="sliderRange"
+          />
         </div>
 
-        <div class="options">
-            <div class="option">
-                <label for="sliderRange">Length: <span id="rangeValue"></span></label>
-                <input type="range" min="12" max="50" value="16" class="slider" id="sliderRange">
-            </div>
-
-
-            <div class="option">
-            <label for="UppercaseChars">Uppercase Characters</label>
-            <input type="checkbox" name="UppercaseChars" id="UppercaseChars" checked>
-            </div>
-
-            <div class="option">
-            <label for="LowercaseChars">Lowercase Characters</label>
-            <input type="checkbox" name="LowercaseChars" id="LowercaseChars" checked>
-            </div>
-            
-            <div class="option">
-            <label for="Numbers">Numbers</label>
-            <input type="checkbox" name="Numbers" id="Numbers" checked>
-            </div>
-            
-            <div class="option">
-            <label for="Symbols">Symbols</label>
-            <input type="checkbox" name="Symbols" id="Symbols">
-            </div>
+        <div class="option">
+          <label for="UppercaseChars">Uppercase Characters</label>
+          <input
+            type="checkbox"
+            name="UppercaseChars"
+            id="UppercaseChars"
+            checked
+          />
         </div>
 
-        <div class="generate">
+        <div class="option">
+          <label for="LowercaseChars">Lowercase Characters</label>
+          <input
+            type="checkbox"
+            name="LowercaseChars"
+            id="LowercaseChars"
+            checked
+          />
+        </div>
+
+        <div class="option">
+          <label for="Numbers">Numbers</label>
+          <input type="checkbox" name="Numbers" id="Numbers" checked />
+        </div>
+
+        <div class="option">
+          <label for="Symbols">Symbols</label>
+          <input type="checkbox" name="Symbols" id="Symbols" />
+        </div>
+      </div>
+
+      <div class="generate">
         <button id="btnGenerate">Generate Password</button>
-        </div>
+      </div>
     </div>
 
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
