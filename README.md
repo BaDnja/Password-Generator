@@ -6,8 +6,6 @@ Simple **web based** *Password Generator* that includes:
     - Numbers and
     - Symbols.
 
-You can check out the live version [here](http://www.badnja.com/c/passgen/).
-
 ![Password Generator](images/passgen.png)
 ## What I Learned
 Below are listed thing i learned in this challenge (links provided after the list):
